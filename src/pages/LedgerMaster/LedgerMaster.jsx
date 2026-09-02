@@ -1,5 +1,5 @@
 import { useLedgerMaster } from "./useLedgerMaster";
-import LedgerMasterForm from "../LedgerMaster/ledgerMasterForm";
+import LedgerMasterForm from "../LedgerMaster/LedgerMasterForm";
 import FormPage from "../../components/common/Form/FormPage";
 import FormHeader from "../../components/common/Form/FormHeader";
 import FormActions from "../../components/common/Form/FormActions";
