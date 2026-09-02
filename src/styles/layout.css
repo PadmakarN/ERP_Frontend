@@ -1,0 +1,12 @@
+.content-area {
+  height: calc(100vh - 100px); /* topbar + tabbar adjust */
+  position: relative;
+  overflow: hidden;
+}
+
+.modalwin-box {
+  width: 90%;
+  height: 90%;
+  background: #fff;
+  border-radius: 6px;
+}

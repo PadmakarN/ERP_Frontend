@@ -1,0 +1,11 @@
+theme:{
+    extend:{
+        colors:{
+            primary:'#0A74DA',
+            secondary:'#F4F4F4',
+        },
+        borderRadious:{
+            base:'8px',
+        }
+    }
+}

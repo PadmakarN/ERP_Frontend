@@ -1,0 +1,9 @@
+.container {
+  padding: 1rem; /* Tailwind's p-4 */
+}
+
+.title {
+  font-size: 1.25rem; /* Tailwind's text-xl */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Tailwind's mb-4 */
+}

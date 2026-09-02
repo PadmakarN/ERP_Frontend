@@ -1,0 +1,648 @@
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
+/*
+LIGHT MODE
+
+Background       : #F8FAFC
+Sidebar          : #FFFFFF
+Text             : #0F172A
+Muted Text       : #64748B
+Border           : #E2E8F0
+Hover            : #F1F5F9
+Active           : #EFF6FF
+Primary          : #2563EB
+
+
+DARK MODE
+
+Background       : #111827
+Sidebar          : #0F172A
+Text             : #F8FAFC
+Muted Text       : #94A3B8
+Border           : #334155
+Hover            : #1E293B
+Active           : #172554
+Primary          : #3B82F6
+*/
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.main-container {
+  z-index: 2;
+
+  margin: 0 5px;
+  padding: 0;
+
+  width: calc(100vw - 10px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  background-color: #ffffff;
+
+  color: #0f172a;
+
+  height: 100vh;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+
+  border-right: 1px solid #e2e8f0;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+
+/* =========================================================
+   DARK SIDEBAR
+========================================================= */
+
+.dark .sidebar {
+  background-color: #0f172a;
+
+  color: #f8fafc;
+
+  border-right: 1px solid #1e293b;
+
+  scrollbar-color: #475569 transparent;
+}
+
+
+/* =========================================================
+   TOP SECTION
+========================================================= */
+
+.top_section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 10px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  line-height: 0;
+
+  color: #0f172a;
+
+  letter-spacing: 0.2px;
+}
+
+
+.dark .logo {
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   MENU / BARS BUTTON
+========================================================= */
+
+.bars {
+  cursor: pointer;
+
+  font-size: 20px;
+
+  padding: 5px;
+
+  width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 1100;
+
+  position: relative;
+
+  color: #334155;
+
+  border-radius: 6px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* LIGHT HOVER */
+
+.bars:hover {
+  background-color: #f1f5f9;
+
+  color: #2563eb;
+}
+
+
+/* DARK */
+
+.dark .bars {
+  color: #cbd5e1;
+}
+
+
+/* DARK HOVER */
+
+.dark .bars:hover {
+  background-color: #1e293b;
+
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search {
+  display: flex;
+
+  align-items: center;
+
+  margin: 10px 0;
+
+  height: 30px;
+
+  width: 100%;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.search_icon {
+  color: #64748b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.dark .search_icon {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.search input {
+  border: 1px solid transparent;
+
+  width: 200px;
+
+  margin-left: 10px;
+
+  border-radius: 6px;
+
+  background-color: #f1f5f9;
+
+  color: #0f172a;
+
+  outline: none;
+
+  padding: 6px 10px;
+
+  font-size: 14px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* LIGHT SEARCH FOCUS */
+
+.search input:focus {
+  background-color: #ffffff;
+
+  border-color: #93c5fd;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   SEARCH PLACEHOLDER
+========================================================= */
+
+.search input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   DARK SEARCH
+========================================================= */
+
+.dark .search input {
+  background-color: #1e293b;
+
+  color: #f8fafc;
+
+  border-color: #334155;
+}
+
+
+.dark .search input:focus {
+  background-color: #1e293b;
+
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+.dark .search input::placeholder {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   ROUTES
+========================================================= */
+
+.routes {
+  margin-top: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  text-decoration: none;
+
+  gap: 4px;
+}
+
+
+/* =========================================================
+   NORMAL LINK
+========================================================= */
+
+.link {
+  display: flex;
+
+  align-items: center;
+
+  color: #334155;
+
+  gap: 10px;
+
+  padding: 8px 10px;
+
+  margin: 0 6px;
+
+  border-right: 3px solid transparent;
+
+  border-radius: 6px;
+
+  text-decoration: none !important;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   LINK HOVER - LIGHT
+========================================================= */
+
+.link:hover {
+  background-color: #f1f5f9;
+
+  color: #2563eb;
+
+  border-right-color: #93c5fd;
+}
+
+
+/* =========================================================
+   LINK HOVER - DARK
+========================================================= */
+
+.dark .link {
+  color: #cbd5e1;
+}
+
+
+.dark .link:hover {
+  background-color: #1e293b;
+
+  color: #60a5fa;
+
+  border-right-color: #3b82f6;
+}
+
+
+/* =========================================================
+   ACTIVE LINK - LIGHT
+========================================================= */
+
+.active {
+  background-color: #eff6ff;
+
+  color: #2563eb;
+
+  border-right: 3px solid #2563eb;
+}
+
+
+/* =========================================================
+   ACTIVE LINK - DARK
+========================================================= */
+
+.dark .active {
+  background-color: #172554;
+
+  color: #60a5fa;
+
+  border-right: 3px solid #3b82f6;
+}
+
+
+/* =========================================================
+   LINK TEXT
+========================================================= */
+
+.link_text {
+  white-space: nowrap;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  color: #334155;
+}
+
+
+.dark .link_text {
+  color: #e2e8f0;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+  display: flex;
+
+  align-items: center;
+
+  color: #334155;
+
+  text-decoration: none !important;
+
+  padding: 8px 10px;
+
+  margin: 0 6px;
+
+  border-right: 3px solid transparent;
+
+  border-radius: 6px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   DARK MENU
+========================================================= */
+
+.dark .menu {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   MENU HOVER
+========================================================= */
+
+.menu:hover {
+  background-color: #f1f5f9;
+
+  color: #2563eb;
+}
+
+
+.dark .menu:hover {
+  background-color: #1e293b;
+
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   MENU ITEM
+========================================================= */
+
+.menu_item {
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   MENU CONTAINER
+========================================================= */
+
+.menu_container {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   SUB MENU LINKS
+========================================================= */
+
+.menu_container .link {
+  padding-left: 20px;
+
+  margin-left: 10px;
+
+  border-right: 3px solid transparent;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   DARK SUB MENU
+========================================================= */
+
+.dark .menu_container .link {
+  border-bottom: 1px solid #1e293b;
+}
+
+
+/* =========================================================
+   SUB MENU HOVER
+========================================================= */
+
+.menu_container .link:hover {
+  background-color: #f8fafc;
+
+  border-right-color: #93c5fd;
+}
+
+
+.dark .menu_container .link:hover {
+  background-color: #1e293b;
+
+  border-right-color: #3b82f6;
+}
+
+
+/* =========================================================
+   SUB MENU ACTIVE
+========================================================= */
+
+.menu_container .active {
+  background-color: #eff6ff;
+
+  color: #2563eb;
+
+  border-right-color: #2563eb;
+}
+
+
+.dark .menu_container .active {
+  background-color: #172554;
+
+  color: #60a5fa;
+
+  border-right-color: #3b82f6;
+}
+
+
+/* =========================================================
+   OUTLET
+========================================================= */
+
+.outlet {
+  margin-top: 20px;
+
+  transition: margin-left 0.4s ease-in-out;
+
+  height: calc(100vh - 20px);
+
+  margin-left: 0;
+
+  margin-right: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR EXPANDED
+========================================================= */
+
+.outlet.sidebar-expanded {
+  margin-left: 250px;
+}
+
+
+/* =========================================================
+   SIDEBAR COLLAPSED
+========================================================= */
+
+.outlet.sidebar-collapsed {
+  margin-left: 45px;
+}
+
+
+/* =========================================================
+   BOOTSTRAP CONTAINER FIX
+========================================================= */
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 1.5rem;
+
+  --bs-gutter-y: 0;
+
+  width: 100%;
+
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+
+  margin-right: 0;
+
+  margin-left: 0;
+}
