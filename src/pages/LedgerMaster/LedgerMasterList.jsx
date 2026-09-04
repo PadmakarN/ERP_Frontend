@@ -1,6 +1,6 @@
-import MasterList from '../../components/MasterList/MasterList';
+import MasterList from '../../components/masterlist/MasterList';
 import LedgerMaster from './LedgerMaster';
-import { useLedgerMaster } from './useLedgerMaster';
+import { useLedgerMaster } from "./useLedgerMaster";
 
 const LedgerMasterList = () => {
  const {fetchAllLedgers,loading,error,ledgers,limit,setLimit} = useLedgerMaster();

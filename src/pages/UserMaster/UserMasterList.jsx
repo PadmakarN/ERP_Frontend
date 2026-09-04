@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import API_URL from "../../Config/apiConfig";
-import MstList from "../../components/MasterList/MasterList";
+import MstList from "../../components/masterlist/MasterList";
 import UserMaster from "./UserMaster";
 import { useUserMaster } from "../../hooks/useUserMaster"; 
 

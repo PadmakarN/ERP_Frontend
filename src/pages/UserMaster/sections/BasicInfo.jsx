@@ -1,7 +1,7 @@
 import AppInput from "../../../components/common/AppInput";
-import FormGrid from "../../../components/common/Form/FormGrid";
-import FormSection from "../../../components/common/Form/FormSection";
-import AppLookup from "../../../components/common/AppLookup/LookupInput";
+import FormGrid from "../../../components/common/form/FormGrid";
+import FormSection from "../../../components/common/form/FormSection";
+import AppLookup from "../../../components/common/applookup/LookupInput";
 import {
   User,
 } from "lucide-react";

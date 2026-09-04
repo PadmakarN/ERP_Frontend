@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import API_URL from '../Config/apiConfig';
+import API_URL from '../config/apiConfig';
 import { useNavigate } from 'react-router-dom';
-import '../pages/Styles/LoginPage.css';
+import '../pages/styles/LoginPage.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../store/slices/authSlice';
 import Alert from '../components/Alert';

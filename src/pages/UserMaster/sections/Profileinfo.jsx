@@ -1,6 +1,6 @@
 import ImageUploader from "../../../components/common/ImageUploader";
-import FormGrid from "../../../components/common/Form/FormGrid";
-import FormSection from "../../../components/common/Form/FormSection";
+import FormGrid from "../../../components/common/form/FormGrid";
+import FormSection from "../../../components/common/form/FormSection";
 import {
   User,
 } from "lucide-react";

@@ -1,7 +1,6 @@
 import AppInput from "../../../components/common/AppInput";
-import AppLookup from "../../../components/common/AppLookup/AppLookup";
-import FormSection from "../../../components/common/Form/FormSection";
-import FormGrid from "../../../components/common/Form/FormGrid";
+import FormSection from "../../../components/common/form/FormSection";
+import FormGrid from "../../../components/common/form/FormGrid";
 import { Banknote } from "lucide-react";
 
 const BankInfo = ({ form, errors, onChange }) => {

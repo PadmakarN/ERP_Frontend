@@ -1,4 +1,4 @@
-import MasterList from '../../components/MasterList/MasterList';
+import MasterList from '../../components/masterlist/MasterList';
 import BranchMaster from './BranchMaster';
 import { useBranchMaster } from './useBranchMaster';
 

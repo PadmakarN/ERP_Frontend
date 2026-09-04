@@ -1,21 +1,19 @@
 import { useState, useEffect, useCallback } from "react";
-import {useNavigate} from "react-router-dom";
 import { useNotification } from "../../components/common/notification/NotificationContext";
 import {
-  getaAllBranches,
-  getBranchById,
-  createBranch,
-  updateBranch,
-  deleteBranch,
-} from "./branchMaster.service";
-import { branchMasterSchema } from "./branchMaster.validation";
+  getaAllCompanies,
+  getCompanyById,
+  createCompany,
+  updateCompany,
+  deleteCompany,
+} from "./companyMaster.service";
+import { companyMasterSchema } from "./companyMaster.validation";
 
 /* ================= INITIAL FORM ================= */
 const INITIAL_FORM = {
-  branchid: "",
-  branchname: "",
-  shortname: "",
   onacid: "",
+  companyname: "",
+  shortname: "",
   currencycode: "",
   invprefix: "",
   address: "",
@@ -35,10 +33,10 @@ const INITIAL_FORM = {
   gst_date: "",
 };
 
-const mapBranchToForm = (data = {}) => ({
-  branchid: data.BranchID ?? "",
-  branchname: data.BranchName ?? "",
-  shortname: data.ShortName ?? "",
+const mapCompanyToForm = (data = {}) => ({
+  companyid: data.CompanyID ?? "",
+  companyname: data.CompanyName ?? "",
+  State: data.ShortName ?? "",
   onacid: data.OnAcID ?? "",
   currencycode: data.CurrencyCode ?? "",
   invprefix: data.InvPrefix ?? "",
@@ -63,22 +61,21 @@ const mapBranchToForm = (data = {}) => ({
 const getErrorMessage = (err, defaultMessage = "Something went wrong") => {
   return err?.response?.data?.message || err?.message || defaultMessage;
 };
-export const useBranchMaster = (branchid) => {
+export const useCompanyMaster = (companyid) => {
   /* ================= STATES ================= */
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [branches, setBranches] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [error, setError] = useState(null);
   const [limit, setLimit] = useState(100);
   const notify = useNotification();
-  const navigate = useNavigate();
-  /* ================= FETCH ALL BRANCHES ================= */
-  const fetchAllBranches = useCallback(async () => {
+  /* ================= FETCH ALL COMPANIES ================= */
+  const fetchAllCompanies = useCallback(async () => {
     try {
       setLoading(true);
-      const { data } = await getaAllBranches(limit);
-      setBranches(data);
+      const { data } = await getaAllCompanies(limit);
+      setCompanies(data);
       setError(null);
       return {
         success: true,
@@ -97,24 +94,24 @@ export const useBranchMaster = (branchid) => {
   }, [limit]);
   /* ================= EFFECTS ================= */
   useEffect(() => {
-    fetchAllBranches();
-  }, [fetchAllBranches]);
+    fetchAllCompanies();
+  }, [fetchAllCompanies]);
 
-  /* ================= LOAD BRANCH ================= */
+  /* ================= LOAD COMPANY ================= */
   useEffect(() => {
-    if (branchid) {
-      loadBranch();
+    if (companyid) {
+      loadCompany();
     }
-  }, [branchid]);
+  }, [companyid]);
 
-  const loadBranch = async () => {
+  const loadCompany = async () => {
     try {
       setLoading(true);
-      const response = await getBranchById(branchid);
+      const response = await getCompanyById(onacid);
       const data = response?.data ?? [];
       setForm(mapBranchToForm(data));
     } catch (err) {
-      console.log("Fetch to Branch byID:", err);
+      console.log("Fetch to Company byID:", err);
       const message = getErrorMessage(err);
       setError(message);
       return {
@@ -141,8 +138,8 @@ export const useBranchMaster = (branchid) => {
     }));
   };
   /* ================= HANDLE REFRESH ================= */
-  const refreshBranch = async (branchid) => {
-    const response = await getBranchById(branchid);
+  const refreshCompany = async (onacid) => {
+    const response = await getCompanyById(onacid);
     const data = response?.data ?? [];
     setForm(mapBranchToForm(data));
   };
@@ -154,34 +151,34 @@ export const useBranchMaster = (branchid) => {
   setLoading(true);
   try {
     // ================= VALIDATION =================
-    await branchMasterSchema.validate(form, {
+    await companyMasterSchema.validate(form, {
       abortEarly: false,
     });
     setErrors({});
     // ================= UPDATE =================
-    if (form.branchid) {
-      const response = await updateBranch(form.branchid, form);
+    if (form.onacid) {
+      const response = await updateCompany(form.onacid, form);
       console.log("UPDATE RESPONSE:", response);
-      if (!response?.data?.BranchID){
+      if (!response?.data?.OnAcID){
         throw new Error(
-          response?.message || "Branch ID not returned after update"
+          response?.message || "Company ID not returned after update"
         );
       }
-      await refreshBranch(response.data?.BranchID);
-      notify.success("Branch updated successfully");
+      await refreshCompany(response.data?.OnAcID);
+      notify.success("Company updated successfully");
       return {
         success: true,
-        message: "Branch updated successfully",
+        message: "Company updated successfully",
       };
     }
     // ================= CREATE =================
-    const response = await createBranch(form);
+    const response = await createCompany(form);
     console.log("CREATE RESPONSE:", response.data);
-    await refreshBranch(response.data?.BranchID);
-    notify.success("Branch created successfully");
+    await refreshCompany(response.data?.OnAcID);
+    notify.success("Company created successfully");
     return {
       success: true,
-      message: "Branch created successfully",
+      message: "Company created successfully",
     };
   } catch (err) {
     console.error("Submit error:", err);
@@ -220,31 +217,26 @@ export const useBranchMaster = (branchid) => {
   /* ================= HANDLE DELETE ================= */
   const handleDelete = async () => {
     try {
-      if (!form.branchid) {
+      if (!form.onacid) {
         return {
           success: false,
-          message: "Branch not found",
+          message: "Company not found",
         };
       }
       setLoading(true);
-      console.log("Deleting branch with ID:", form.branchid);
-      await deleteBranch(form.branchid);
-      notify.delete("Branch deleted successfully");
-      console.log("Branch deleted successfully");
+      console.log("Deleting company with ID:", form.onacid);
+      await deleteCompany(form.onacid);
+      notify.delete("Company deleted successfully");
       setForm(INITIAL_FORM);
-       // Redirect to the branch master list page
-       console.log("Navigating to /branchMasterList");
-      navigate("/branchMasterList");
-      console.log("Navigation complete");
       return {
         success: true,
-        message: "Branch deleted successfully",
+        message: "Company deleted successfully",
       };
     } catch (err) {
       console.log("Delete error:", err);
       return {
         success: false,
-        message: getErrorMessage(err, "Failed to delete branch"),
+        message: getErrorMessage(err, "Failed to delete company"),
       };
     } finally {
       setLoading(false);
@@ -256,14 +248,14 @@ export const useBranchMaster = (branchid) => {
     setForm,
     errors,
     error,
-    branches,
+    companies,
     loading,
     limit,
     setLimit,
-    fetchAllBranches,
+    fetchAllCompanies,
     handleChange,
     handleSubmit,
     handleDelete,
-    loadBranch,
+    loadCompany,
   };
 };

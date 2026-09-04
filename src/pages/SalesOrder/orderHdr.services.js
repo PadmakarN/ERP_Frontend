@@ -1,4 +1,4 @@
-import api from "../../services/api";
+import api from "../../services/Api";
 /* ================= GET ALL Orders ================= */
 export const getaAllOrders = (newLimit) => {
   return api.get(`/orderhdr?limit=${newLimit}`);

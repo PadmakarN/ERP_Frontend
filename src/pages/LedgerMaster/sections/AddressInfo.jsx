@@ -1,6 +1,6 @@
 import AppInput from "../../../components/common/AppInput";
-import FormSection from "../../../components/common/Form/FormSection";
-import FormGrid from "../../../components/common/Form/FormGrid";
+import FormSection from "../../../components/common/form/FormSection";
+import FormGrid from "../../../components/common/form/FormGrid";
 import { MapPin } from "lucide-react";
 const AddressInfo = ({ form, errors, onChange }) => {
   return (

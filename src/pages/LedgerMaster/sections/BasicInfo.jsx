@@ -1,10 +1,8 @@
 import AppInput from "../../../components/common/AppInput";
-// import AppSelect from "../../../components/common/AppSelect";
-import AppLookup from "../../../components/common/AppLookup/AppLookup";
-import FormSection from "../../../components/common/Form/FormSection";
-import FormGrid from "../../../components/common/Form/FormGrid";
+import FormSection from "../../../components/common/form/FormSection";
+import FormGrid from "../../../components/common/form/FormGrid";
 import { User } from "lucide-react";
-import LookupInput from "../../../components/common/AppLookup/LookupInput";
+import LookupInput from "../../../components/common/applookup/LookupInput";
 
 const BasicInfo = ({ form, setForm, errors, onChange }) => {
   return (

@@ -1,8 +1,8 @@
 import { useBranchMaster } from "./useBranchMaster";
 import BranchMasterForm from "./BranchMasterForm";
-import FormPage from "../../components/common/Form/FormPage";
-import FormHeader from "../../components/common/Form/FormHeader";
-import FormActions from "../../components/common/Form/FormActions";
+import FormPage from "../../components/common/form/FormPage";
+import FormHeader from "../../components/common/form/FormHeader";
+import FormActions from "../../components/common/form/FormActions";
 
 
 function BranchMaster({ onClose, id }) {

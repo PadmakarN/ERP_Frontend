@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import API_URL from '../../Config/apiConfig';
-import MstList from '../../components/MasterList/MasterList';
-import orderHdr from '../SalesOrder/OrderHdr';
-import { useOrderHdr } from '../../pages/SalesOrder/useOrderHdr';
+import MstList from '../../components/masterlist/MasterList';
+import orderHdr from '../salesorder/OrderHdr';
+import { useOrderHdr } from './useOrderHdr';
 
  const OrderHdrList = () => {
  const {fetchAllOrders,loading,error,orders,limit} = useOrderHdr();

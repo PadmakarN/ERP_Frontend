@@ -5,8 +5,8 @@ import {
   createOrder,
   updateOrder,
   deleteOrder,
-} from "../../pages/SalesOrder/orderHdr.services";
-import { OrderHdrSchema } from "../../pages/SalesOrder/orderHdr.validation";
+} from './orderHdr.services';
+import { OrderHdrSchema } from "../../pages/salesorder/orderHdr.validation";
 
 export const useOrderHdr = () => {
   const initialForm = {
