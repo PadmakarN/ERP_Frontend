@@ -1,6 +1,6 @@
 import ImageUploader from "../../components/common/ImageUploader";
-import BasicInfo from "./sections/BasicInfo";
-import ProfileInfo from "./sections/ProfileInfo";
+import BasicInfo from "./sections/Basicinfo";
+import ProfileInfo from "./sections/Profileinfo";
 
 const UserForm = ({
   form,
