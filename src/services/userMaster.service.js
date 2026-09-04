@@ -1,4 +1,4 @@
-import api from "./api"; // ✅ consistent naming
+import api from "./Api"; // ✅ consistent naming
 
 /* ================= GET ALL Users ================= */
 export const getAllUsers = () => {

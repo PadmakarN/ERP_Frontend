@@ -1,5 +1,5 @@
 import BasicInfo from "./sections/BasicInfo";
-import ProfileInfo from "./sections/ProfileInfo";
+import ProfileInfo from "./sections/Profileinfo";
 
 const UserForm = ({
   form,
