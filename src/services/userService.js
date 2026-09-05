@@ -1,5 +1,5 @@
 import axios from "axios";
-import API_URL from "../Config/apiConfig";
+import API_URL from "../config/apiConfig";
 
 export const getUsers = async () => {
   const res = await axios.get(`${API_URL}/api/usermaster`, {
