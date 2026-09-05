@@ -1,5 +1,5 @@
 import axios from "axios";
-import API_URL from "../Config/apiConfig";
+import API_URL from "../config/apiConfig";
 
 const api = axios.create({
   baseURL: `${API_URL}/api`,
