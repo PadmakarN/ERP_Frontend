@@ -1,4 +1,4 @@
-import api from "./api";
+import api from "./Api";
 // Select Data from API
 
 export const fetchdbdata = async ({ table, columns, condition }) => {
