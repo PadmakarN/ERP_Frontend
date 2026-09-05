@@ -4,7 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
-import routes from "../Config/routesConfig";
+import routes from "../config/routesConfig";
 import "../Siderbar.css";
 
 const SideBar = ({ isOpen, setIsOpen, onMenuClick }) => {
