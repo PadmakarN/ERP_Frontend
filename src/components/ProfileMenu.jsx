@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
-import API_URL from "../Config/apiConfig";
+import API_URL from "../config/apiConfig";
 import axios from "axios";
 
 const ProfileMenu = () => {
