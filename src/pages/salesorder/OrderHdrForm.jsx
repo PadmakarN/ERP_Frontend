@@ -1,5 +1,5 @@
 import AppInput from "../../components/common/AppInput";
-import AppLookup from "../../components/common/AppLookup/AppLookup";
+import AppLookup from "../../components/common/applookup/AppLookup";
 import Loading from "../../components/Loading";
 
 
