@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import API_URL from '../Config/apiConfig';
+import API_URL from '../config/apiConfig';
 import { useNavigate } from 'react-router-dom';
 import '../pages/Styles/RegisterPage.css';
 
