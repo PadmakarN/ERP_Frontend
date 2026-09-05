@@ -7,7 +7,7 @@ import {
   deleteUserMaster,
 } from "../services/userMaster.service";
 import { userMasterSchema } from "../validation/userMaster.validation";
-import API_URL from "../Config/apiConfig";
+import API_URL from "../config/apiConfig";
 
 export const useUserMaster = (userid) => {
   // 🧱 initial form

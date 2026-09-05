@@ -1,4 +1,4 @@
-import api from "../../../Config/apiConfig";
+import api from "../../../config/apiConfig";
 
 export const getLookupData = async ({
   table,

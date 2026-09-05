@@ -1,5 +1,5 @@
 import { useUserMaster } from "../../hooks/useUserMaster";
-import UserForm from "../UserMaster/UserMasterForm";
+import UserForm from "../usermaster/UserMasterForm";
 import FormPage from "../../components/common/form/FormPage";
 import FormHeader from "../../components/common/form/FormHeader";
 import FormActions from "../../components/common/form/FormActions";

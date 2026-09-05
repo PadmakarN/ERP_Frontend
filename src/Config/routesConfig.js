@@ -4,14 +4,14 @@ import { BiAnalyse, BiCog } from "react-icons/bi";
 import { AiTwotoneFileExclamation, AiFillHeart } from "react-icons/ai";
 import { BsCartCheck } from "react-icons/bs";
 import Dashboard from "../pages/DashboardPage";
-import UserMasterList from "../pages/UserMaster/UserMasterList";
-import BranchMasterList from "../pages/BranchMaster/BranchMasterList";
-import LedgerMasterList from "../pages/LedgerMaster/LedgerMasterList";
+import UserMasterList from "../pages/usermaster/UserMasterList";
+import BranchMasterList from "../pages/branchmaster/BranchMasterList";
+import LedgerMasterList from "../pages/ledgermaster/LedgerMasterList";
 import Analytics from "../pages/Analytics";
 import Order from "../pages/OrderHdr";
 import Profile from "../pages/Profile";
 import Billing from "../pages/Billing";
-import OrderHdrList from "../pages/SalesOrder/OrderHdrList";
+import OrderHdrList from "../pages/salesorder/OrderHdrList";
 
 const routes = [
   {

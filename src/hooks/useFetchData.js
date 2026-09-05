@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import api from "../services/api";
+import api from "../services/Api";
 
 export const useFetchData = (table, params = {}) => {
   const [data, setData] = useState([]);
