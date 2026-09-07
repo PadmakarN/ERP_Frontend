@@ -5,11 +5,14 @@ const FormHeader = ({ title, subtitle, actions, onClose }) => {
   return (
     <div
       className="
-        flex
-        items-center
-        justify-between
-        px-4
-        py-2
+        flex flex-col
+        md:flex-row
+        md:items-center
+        md:justify-between
+
+        gap-3
+        px-3 py-3
+        md:px-4 md:py-2
 
         bg-white
         dark:bg-gray-900
@@ -21,11 +24,12 @@ const FormHeader = ({ title, subtitle, actions, onClose }) => {
         duration-300
       "
     >
-      {/* Left */}
-      <div>
+      {/* Left - Title */}
+      <div className="min-w-0">
         <h1
           className="
-            text-2xl
+            text-xl
+            md:text-2xl
             font-bold
             text-gray-800
             dark:text-gray-100
@@ -36,9 +40,12 @@ const FormHeader = ({ title, subtitle, actions, onClose }) => {
           {title}
         </h1>
 
+        {/* Mobile वर subtitle hide */}
         {subtitle && (
           <p
             className="
+              hidden
+              md:block
               mt-1
               text-sm
               text-gray-500
@@ -52,16 +59,27 @@ const FormHeader = ({ title, subtitle, actions, onClose }) => {
         )}
       </div>
 
-      {/* Right */}
-      <div className="flex items-center gap-2">
+      {/* Right - Actions */}
+      <div
+        className="
+          flex
+          items-center
+          gap-2
+
+          w-full
+          md:w-auto
+        "
+      >
+        {/* Existing actions */}
         {actions}
 
+        {/* Close button */}
         <AppButton
           variant="secondary"
           onClick={onClose}
           text={
-            <div className="flex items-center gap-1">
-              <X size={16} />
+            <div className="flex items-center gap-1.5">
+              <X size={15} />
               <span>Close</span>
             </div>
           }
